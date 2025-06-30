@@ -1,0 +1,73 @@
+{
+  "component": "MarkmapStyleGuide",
+  "mainStructure": {
+    "Metadata": {
+      "title": "markmap",
+      "config": {
+        "colorFreezeLevel": 2
+      },
+      "visibleOnMap": false,
+      "note": "Frontmatter metadata; not rendered in map but controls behavior"
+    },
+    "Headings": {
+      "levels": "## and deeper are nodes",
+      "visibleOnMap": true,
+      "note": "Used to generate the mind map hierarchy"
+    },
+    "Links": {
+      "type": "inline links",
+      "format": "[text](url)",
+      "visibleOnMap": true
+    },
+    "TextFormatting": {
+      "bold": "**bold**",
+      "italic": "*italic*",
+      "strikethrough": "~~text~~",
+      "highlight": "==highlight==",
+      "inlineCode": "`code`",
+      "visibleOnMap": true,
+      "note": "Basic formatting is preserved in map nodes"
+    },
+    "Lists": {
+      "unordered": ["-", "*", "+"],
+      "ordered": ["1.", "2."],
+      "checkboxes": ["[ ]", "[x]"],
+      "visibleOnMap": true,
+      "note": "If lists and blocks appear at same level, lists may be ignored"
+    },
+    "Math": {
+      "inline": "$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$",
+      "note": "KaTeX syntax supported",
+      "folding": "<!-- markmap: fold -->",
+      "visibleOnMap": true
+    },
+    "Blocks": {
+      "codeBlocks": {
+        "syntax": "```language\ncode\n```",
+        "visibleOnMap": true
+      },
+      "tables": {
+        "syntax": "| Column | Column |\n|-|-|",
+        "visibleOnMap": true
+      },
+      "images": {
+        "syntax": "![alt](url)",
+        "visibleOnMap": true
+      }
+    }
+  },
+  "configOptions": {
+    "colorFreezeLevel": {
+      "type": "number",
+      "default": 2,
+      "description": "Freezes color at specified heading level"
+    },
+    "folding": {
+      "directive": "<!-- markmap: fold -->",
+      "description": "Allows specific sections to be folded (collapsed) by default"
+    },
+    "maxWidth": {
+      "description": "Controls the wrapping of long text in nodes"
+    }
+  }
+}

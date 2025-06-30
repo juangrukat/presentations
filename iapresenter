@@ -1,0 +1,146 @@
+{
+  "component": "MarkdownPresentationGuide",
+  "mainStructure": {
+    "Paragraphs": {
+      "description": "One or more lines of text separated by one or more blank lines.",
+      "visibleOnSlide": false,
+      "details": [
+        "Normal paragraphs are treated as spoken text.",
+        "Indented paragraphs (⇥) appear on slides.",
+        "Use two spaces or a backslash '\\' for a line break within a paragraph."
+      ]
+    },
+    "Headings": {
+      "description": "Use '#' characters to create hierarchical headings.",
+      "visibleOnSlide": true,
+      "syntax": "# H1 to ###### H6"
+    },
+    "Lists": {
+      "unordered": ["-", "+", "*"],
+      "ordered": ["1.", "2.", "3."],
+      "taskLists": ["[ ]", "[x]"],
+      "nested": "Indent with a tab ⇥ or at least four spaces.",
+      "visibleOnSlide": true,
+      "note": "Only indented lists (⇥) are shown on slides."
+    },
+    "Blockquotes": {
+      "description": "Use '>' for blockquotes.",
+      "visibleOnSlide": false,
+      "nestedQuotes": ">> for nested levels.",
+      "slideVersion": {
+        "visibleOnSlide": true,
+        "syntax": "⇥> for visible blockquotes"
+      }
+    },
+    "DefinitionLists": {
+      "description": "Use ⇥ followed by term and colon-separated definitions.",
+      "visibleOnSlide": true,
+      "syntax": "⇥Term\n⇥: Definition"
+    },
+    "HorizontalRules": {
+      "description": "Use horizontal rules to split slides.",
+      "visibleOnSlide": true,
+      "syntax": "---"
+    },
+    "Formatting": {
+      "bold": ["**bold**", "__bold__"],
+      "italic": ["*italic*", "_italic_"],
+      "strikethrough": "~~strikethrough~~",
+      "highlight": "==highlight==",
+      "superscript": ["^2", "^(a+b)^"],
+      "subscript": ["~z", "~y,z~"],
+      "visibleOnSlide": true
+    },
+    "Links": {
+      "inline": "[text](url)",
+      "reference": "[text][id]",
+      "shortcut": "[Google][]",
+      "visibleOnSlide": true
+    },
+    "Notes": {
+      "footnotes": {
+        "inline": "[^Note]",
+        "reference": "[^id]: Note text"
+      },
+      "citations": {
+        "standard": "[p. 23][#Doe:2006]",
+        "uncited": "[Not Cited][#Doe:2006]"
+      },
+      "visibleOnSlide": false
+    },
+    "Comments": {
+      "description": "Start line with // for invisible notes to self.",
+      "visibleOnSlide": false,
+      "syntax": "// This is a comment"
+    },
+    "Images": {
+      "description": "Markdown and HTML image syntax are supported.",
+      "visibleOnSlide": true,
+      "markdownSyntax": "![Alt Text](filename.png)",
+      "htmlSyntax": "<img src='filename.png'>",
+      "note": "Use Media Manager for local files. Replace spaces with %20. No leading slash."
+    },
+    "Tables": {
+      "description": "Use | to separate columns, with a header divider line.",
+      "visibleOnSlide": true,
+      "alignment": {
+        "left": ":--",
+        "right": "--:",
+        "center": ":-:"
+      },
+      "rules": [
+        "First row must contain headers.",
+        "Separator row contains only |, :, -, spaces.",
+        "No multi-line cells; content must be one line.",
+        "Extra | can be used to merge cells."
+      ]
+    },
+    "Code": {
+      "inline": "`code`",
+      "fenced": {
+        "syntax": "```language\ncode\n```"
+      },
+      "note": "Indented code blocks are not supported.",
+      "visibleOnSlide": true
+    },
+    "Math": {
+      "inline": ["$x+y^2$", "\\(x+y^2\\)"],
+      "block": ["$$...$$", "\\[...\\]"],
+      "note": "No space between $ and expression. Add space outside.",
+      "visibleOnSlide": true
+    }
+  },
+  "configOptions": {
+    "paragraphs": {
+      "singleReturnStartsParagraph": false,
+      "recommendedSeparation": "Use blank lines between paragraphs."
+    },
+    "slideVisibility": {
+      "indentationTrigger": "⇥",
+      "visibleElements": [
+        "⇥ paragraphs",
+        "⇥ lists",
+        "⇥ blockquotes",
+        "⇥ definition lists"
+      ]
+    },
+    "footnotes": {
+      "grouping": "Shown at bottom of slide if space allows"
+    },
+    "images": {
+      "useMediaManager": true,
+      "fileRules": {
+        "noLeadingSlash": true,
+        "spaceEncoding": "%20"
+      }
+    },
+    "math": {
+      "engine": "KaTeX",
+      "format": "$...$ and $$...$$"
+    },
+    "codeBlocks": {
+      "languageSupport": true,
+      "preferredSyntax": "fenced blocks with ```"
+    }
+  }
+}

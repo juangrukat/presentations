@@ -1,0 +1,158 @@
+{
+  "component": "DecksetStyleGuide",
+  "mainStructure": {
+    "Headings": {
+      "levels": ["#", "##", "###", "####"],
+      "fitDirective": "[fit]",
+      "autoFit": "fit-header: <levels>",
+      "visibleOnSlide": true
+    },
+    "Lists": {
+      "unordered": "- item",
+      "ordered": "1. item",
+      "nesting": "Indent 4 spaces",
+      "buildSteps": "build-lists: true | false (global or .build-lists on slide)",
+      "visibleOnSlide": true
+    },
+    "TextStyles": {
+      "italic": "*text* or _text_",
+      "bold": "**text** or __text__",
+      "mixed": "_**text**_, __*text*__, __**text**__",
+      "strikethrough": "~~text~~",
+      "superscript": "<sup>sup</sup>",
+      "subscript": "<sub>sub</sub>",
+      "inlineCode": "`code`",
+      "emoji": ":emoji:",
+      "visibleOnSlide": true
+    },
+    "Quotes": {
+      "blockQuote": "> text  -- author",
+      "inlineQuote": "Paragraph + > quote",
+      "visibleOnSlide": true
+    },
+    "Links": {
+      "external": "[text](url)",
+      "internalAnchor": "<a name=\"id\"/> … [link](#id)",
+      "visibleOnSlide": true
+    },
+    "CodeBlocks": {
+      "fenced": "```lang … ```",
+      "highlight": "[.code-highlight: none|all|n|n-m]",
+      "stepThrough": "Multiple .code-highlight lines in order",
+      "autoScale": "automatic when width exceeded",
+      "defaultLanguage": "code-language: Swift (global)",
+      "visibleOnSlide": true
+    },
+    "Tables": {
+      "syntax": "| h1 | h2 |",
+      "alignment": ":---:", "---:", "left default",
+      "visibleOnSlide": true
+    },
+    "Formulas": {
+      "block": "$$ … $$",
+      "inline": "$$a$$ in text",
+      "autoScale": true,
+      "visibleOnSlide": true
+    },
+    "Footnotes": {
+      "numeric": "[^1] … [^1]: text",
+      "named": "[^Wiles, 1995]",
+      "uniqueIds": true,
+      "visibleOnSlide": true
+    },
+    "Images": {
+      "basic": "![alt](image.jpg)",
+      "modifiers": ["fit", "fill", "left", "right", "percentage", "original", "filtered", "corner-radius(n)"],
+      "globalBackground": "background-image: file",
+      "splitSlides": "left/right modifier starts split view",
+      "inlineImages": "![inline](img)",
+      "visibleOnSlide": true
+    },
+    "Videos": {
+      "embed": "!(video.mov) or ![](YouTube URL)",
+      "layoutModifiers": ["left", "right", "fit", "fill", "percentage", "hide"],
+      "playback": ["autoplay", "loop", "mute", "autoadvance"],
+      "visibleOnSlide": true
+    },
+    "Audio": {
+      "embed": "!(audio.mp3)",
+      "layoutModifiers": ["left", "right", "fit", "fill", "percentage", "hide"],
+      "playback": ["autoplay", "loop", "mute"],
+      "visibleOnSlide": true
+    },
+    "Columns": {
+      "startColumn": "[.column]",
+      "autoWidth": "Evenly divides slide",
+      "visibleOnSlide": true
+    },
+    "Graphs": {
+      "mermaid": "```mermaid … ```",
+      "customColorsCmd": "[.graph: #primary, #accent, #link, dark-mode(bool)]",
+      "visibleOnSlide": true
+    },
+    "PresenterNotes": {
+      "marker": "^ paragraph",
+      "styleCmd": "presenter-notes: text-scale(n), alignment(), font",
+      "visibleOnSlide": false
+    },
+    "HiddenSlides": {
+      "syntax": "<!-- hidden -->",
+      "visibleOnSlide": false
+    },
+    "LineBreaks": {
+      "soft": "newline respected in paragraphs",
+      "brTag": "<br> inside headings/footers"
+    }
+  },
+  "configOptions": {
+    "autoscale": {
+      "command": "autoscale: true | false",
+      "scope": "global or [.autoscale] per slide"
+    },
+    "footer": {
+      "command": "footer: text  /  [.footer: text]  /  [.hide-footer]",
+      "scope": "global or per slide"
+    },
+    "slideNumbers": {
+      "command": "slidenumbers: true | false  ;  slidecount: true | false",
+      "scope": "global or per slide"
+    },
+    "slideTransition": {
+      "command": "slide-transition: style(duration)",
+      "styles": ["fade", "fadeThroughColor(#hex)", "push(dir)", "move(dir)", "reveal(dir)"],
+      "scope": "global or [.slide-transition] per slide"
+    },
+    "slideDividers": {
+      "command": "slide-dividers: #, ##, ###",
+      "scope": "global only"
+    },
+    "theme": {
+      "command": "theme: Name[, ColorIndex]",
+      "scope": "global only"
+    },
+    "buildLists": {
+      "command": "build-lists: true | false",
+      "scope": "global or per slide"
+    },
+    "fitHeader": {
+      "command": "fit-header: #, ##",
+      "scope": "global"
+    },
+    "backgroundImage": {
+      "command": "background-image: file.jpg",
+      "scope": "global"
+    },
+    "customStyles": {
+      "targets": [
+        ".text", ".header", ".footer-style", ".background-color", ".list",
+        ".table", ".table-separator", ".code", ".footnote",
+        ".footnote-separator", ".formula", ".quote", ".quote-author", ".graph"
+      ],
+      "syntax": "[.<target>: color, alignment(), line-height(n), text-scale(n), font, extras]"
+    },
+    "presenterNotesStyle": {
+      "command": "presenter-notes: text-scale(n), alignment(), font",
+      "scope": "global or [.presenter-notes] per slide"
+    }
+  }
+}

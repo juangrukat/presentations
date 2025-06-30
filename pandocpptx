@@ -1,0 +1,122 @@
+{
+  "component": "PandocPPTXStyleGuide",
+  "mainStructure": {
+    "SlideLevel": {
+      "description": "The heading level at which new slides are started.",
+      "defaultBehavior": "Automatically detected as the highest heading level followed by content, not another heading.",
+      "override": "--slide-level=n",
+      "impact": {
+        "equalToHeadingLevel": "Creates new slide.",
+        "aboveSlideLevel": "Creates section title slide.",
+        "belowSlideLevel": "Creates block within the current slide."
+      }
+    },
+    "SlideBoundaries": {
+      "headingBased": {
+        "rule": "A heading at slide-level starts a new slide.",
+        "aboveSlideLevel": "Creates section (title) slide.",
+        "belowSlideLevel": "Creates content blocks within the slide."
+      },
+      "horizontalRule": {
+        "rule": "A horizontal rule (---) always starts a new slide."
+      },
+      "titlePage": {
+        "rule": "Automatically created from metadata (title, author, date) if present.",
+        "layout": "Title Slide"
+      }
+    },
+    "HeadingSemantics": {
+      "aboveSlideLevel": {
+        "description": "Creates section title slide (Section Header layout).",
+        "contentPlacement": {
+          "beamer": "Included in subsequent slide.",
+          "html": "Shown on title slide."
+        }
+      },
+      "slideLevel": {
+        "description": "Starts a new slide."
+      },
+      "belowSlideLevel": {
+        "description": "Creates content block within current slide.",
+        "specialClasses": {
+          "example": "Creates exampleblock.",
+          "alert": "Creates alertblock.",
+          "default": "Creates regular block."
+        }
+      }
+    },
+    "Layouts": {
+      "TitleSlide": {
+        "trigger": "Slide created from metadata block (title, author, date)."
+      },
+      "SectionHeader": {
+        "trigger": "Heading above slide-level.",
+        "description": "Used for section breaks."
+      },
+      "TwoContent": {
+        "trigger": "Div with class 'columns' containing at least two 'column' divs.",
+        "layout": "Two Content"
+      },
+      "Comparison": {
+        "trigger": "TwoContent layout where at least one column has text followed by non-text.",
+        "layout": "Comparison"
+      },
+      "ContentWithCaption": {
+        "trigger": "Text followed by image or table in a non-column slide.",
+        "layout": "Content with Caption"
+      },
+      "Blank": {
+        "trigger": "Slide contains only speaker notes or non-breaking space.",
+        "layout": "Blank"
+      },
+      "TitleAndContent": {
+        "trigger": "Default layout for unmatched content.",
+        "layout": "Title and Content"
+      }
+    },
+    "IncrementalLists": {
+      "globalSetting": {
+        "option": "-i",
+        "default": "Lists display all at once unless -i is set.",
+        "effect": "Enables incremental display of list items."
+      },
+      "perListControl": {
+        "divClass": {
+          "incremental": "Forces incremental display.",
+          "nonincremental": "Forces full display."
+        },
+        "syntax": {
+          "fencedDiv": "::: incremental\n- Item\n:::",
+          "alternative": {
+            "blockQuote": {
+              "behavior": "Reverses the default display setting.",
+              "caution": "This is legacy behavior."
+            }
+          }
+        }
+      },
+      "mixedMode": {
+        "description": "Both incremental and nonincremental lists can coexist in a document.",
+        "workaround": {
+          "quotedLists": "Use a fenced div inside the block quote to preserve standard list behavior.",
+          "example": "> ::: wrapper\n> - a\n> - list\n> :::"
+        }
+      }
+    }
+  },
+  "configOptions": {
+    "slideLevel": {
+      "flag": "--slide-level",
+      "default": "Auto-detected from heading structure",
+      "specialCase": "Use 0 to rely only on horizontal rules for slide breaks"
+    },
+    "referenceDoc": {
+      "flag": "--reference-doc",
+      "description": "Specifies a custom .pptx template to control layout styles"
+    },
+    "incremental": {
+      "flag": "-i",
+      "description": "Turns on incremental display for all lists unless overridden"
+    }
+  }
+}
